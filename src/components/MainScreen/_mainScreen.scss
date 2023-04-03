@@ -1,0 +1,416 @@
+// Local Variables
+$width-flag-1: 40px;
+$width-flag-4: 60px;
+$width-flag-5: 40px;
+
+.main-screen {
+	// Главный экран
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	margin-top: 30px;
+	@media (min-width: $sx) {
+		margin-top: 40px;
+	}
+	@media (min-width: $sm) {
+		margin-top: 50px;
+		flex-direction: row;
+		align-items: flex-start;
+	}
+	@media (min-width: $md) {
+		margin-top: 60px;
+	}
+	@media (min-width: $lg) {
+		margin-top: 70px;
+	}
+	@media (min-width: $xl) {
+		margin-top: 80px;
+		justify-content: space-between;
+	}
+	@media (min-width: $xl2) {
+		margin-top: 90px;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		@media (min-width: $sm) {
+			gap: 18px;
+		}
+		@media (min-width: $md) {
+			gap: 21px;
+		}
+		@media (min-width: $lg) {
+			gap: 24px;
+		}
+		@media (min-width: $xl) {
+			gap: 27px;
+		}
+		@media (min-width: $xl2) {
+			gap: 30px;
+		}
+	}
+	// Длина основного текста
+	&__text {
+		max-width: 600px;
+		display: flex;
+		flex-direction: column;
+		gap: inherit;
+	}
+	// Заголовок
+	&__highlight {
+		color: $heading-secondary;
+	}
+	// Размеры и отступ описания
+	&__description {
+		font-weight: 500;
+		font-size: 12px;
+		color: $subheading;
+		@media (min-width: $sm) {
+			font-size: 13px;
+		}
+		@media (min-width: $md) {
+			font-size: 14px;
+		}
+		@media (min-width: $lg) {
+			font-size: 15px;
+		}
+	}
+	// Кнопка Get Started
+	&__button {
+		width: max-content;
+		font-size: 15px;
+		font-weight: 500;
+		color: $white;
+		background-color: $main-green;
+		padding: 12px 22px;
+		border-radius: 30px;
+		transition: background-color $main-transition;
+		&:hover {
+			background-color: $main-green-hover;
+		}
+	}
+	// Поле поиска
+	&__search {
+		position: relative;
+		margin-top: 10px;
+		@media (min-width: $sm) {
+			margin-top: 20px;
+		}
+		@media (min-width: $md) {
+			margin-top: 30px;
+		}
+		@media (min-width: $lg) {
+			margin-top: 40px;
+		}
+		@media (min-width: $xl) {
+			margin-top: 50px;
+		}
+		// Инпут
+		&-input {
+			font-family: 'Roboto', sans-serif;
+			background-color: $white;
+			padding: 22px 67px 22px 40px;
+			border-radius: 100px;
+			width: 100%;
+			max-width: 600px;
+			box-shadow: $search-shadow;
+			letter-spacing: 0.01em;
+			@media (max-width: $sm) {
+				padding: 14px 55px 14px 20px;
+			}
+			&:placeholder {
+				color: $placeholder;
+				padding-left: 10px;
+			}
+		}
+		// Кнопка
+		&-button {
+			position: absolute;
+			padding: 15px;
+			top: 4px;
+			right: 6px;
+			background-color: $main-green;
+			border-radius: 100%;
+			transition: all $main-transition;
+			@media (max-width: $sm) {
+				padding: 6px;
+				right: 4px;
+			}
+			&:hover {
+				background-color: $main-green-hover;
+			}
+		}
+	}
+	// Пользователи
+	&__users {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		// Изображения
+		&-container {
+			display: flex;
+			align-items: center;
+			@media (max-width: $xs) {
+				margin-right: 30px;
+			}
+			& > img {
+				&:not(:first-child) {
+					margin-left: -17px;
+				}
+				&:first-child {
+					z-index: 5;
+				}
+				&:nth-child(2) {
+					z-index: 4;
+				}
+				&:nth-child(3) {
+					z-index: 3;
+				}
+				&:last-child {
+					z-index: 2;
+				}
+			}
+		}
+		&-text {
+			color: $users-primary;
+			& > a {
+				color: $users-secondary;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	// Флаги
+	&__image {
+		position: relative;
+		width: fit-content;
+		@media (max-width: $sm) {
+			margin: 30px auto 0;
+		}
+		@media (min-width: $sm) {
+			margin: 0 auto;
+		}
+		@media (min-width: $xl) {
+			margin: unset;
+		}
+		img {
+			position: relative;
+			z-index: 3;
+		}
+		// Зеленый круг
+		&-circle_green {
+			position: absolute;
+			width: 60%;
+			top: 10%;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			z-index: 2;
+			@media (min-width: $sx) {
+				width: 80%;
+				top: 13%;
+			}
+			@media (min-width: $lg) {
+				width: 100%;
+				top: 13%;
+			}
+			&::before {
+				content: '';
+				display: block;
+				padding-bottom: 100%;
+				background-color: $main-green;
+				border-radius: 50%;
+			}
+		}
+		// Серый круг
+		&-circle_gray {
+			position: absolute;
+			left: -50%;
+			right: -50%;
+			margin: 0 auto;
+			width: 75%;
+			top: 10px;
+			perspective-origin: center;
+			animation-duration: 10s;
+			animation-delay: 2.4s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			z-index: 2;
+			@media (min-width: $sx) {
+				width: 100%;
+				top: -15px;
+			}
+			@media (min-width: $lg) {
+				width: 120%;
+				top: -15px;
+			}
+			@media (min-width: $xl) {
+				width: 140%;
+				top: -15px;
+			}
+			@media (min-width: $xl2) {
+				top: -44px;
+				width: 160%;
+			}
+			// Ззапуска анимации вращения
+			&.flags-animation {
+				animation-name: rotate-infinite;
+			}
+			&::before {
+				content: '';
+				display: block;
+				padding-bottom: 100%;
+				background-color: transparent;
+				border: 2px solid #e8e8e8;
+				border-radius: 50%;
+			}
+			// Флаги
+			[class^='anim-flag-'] {
+				position: absolute;
+				animation-duration: 0.6s;
+				animation-timing-function: ease-in-out;
+				animation-fill-mode: both;
+				transform-origin: center center;
+				@media (max-width: $md) {
+					width: 30px;
+				}
+			}
+			.anim-flag-1 {
+				left: 50%;
+				top: 55%;
+				transform: translateX(-35%);
+				width: $width-flag-1;
+			}
+			.anim-flag-2 {
+				left: 50%;
+				top: 50%;
+				animation-delay: 0.4s;
+			}
+			.anim-flag-3 {
+				top: 50%;
+				right: 0;
+				left: 0;
+				margin: 0 auto;
+				transform: translateY(-50%);
+				animation-delay: 0.8s;
+			}
+			.anim-flag-4 {
+				right: 50%;
+				top: 50%;
+				width: $width-flag-4;
+				animation-delay: 1.2s;
+				@media (max-width: $sm) {
+					width: $width-flag-1;
+				}
+			}
+			.anim-flag-5 {
+				right: 50%;
+				top: 55%;
+				transform: translateX(35%);
+				width: $width-flag-5;
+				animation-delay: 1.6s;
+			}
+			.anim-flag-6 {
+				bottom: 50%;
+				right: 0;
+				left: 0;
+				margin: 0 auto;
+				transform: translateY(50%);
+				animation-delay: 2s;
+			}
+			// Запуск анимации вылета флагов
+			&.flags-animation {
+				.anim-flag-1 {
+					animation-name: fly-out-1;
+				}
+				.anim-flag-2 {
+					animation-name: fly-out-2;
+				}
+				.anim-flag-3 {
+					animation-name: fly-out-3;
+				}
+				.anim-flag-4 {
+					animation-name: fly-out-4;
+				}
+				.anim-flag-5 {
+					animation-name: fly-out-5;
+				}
+				.anim-flag-6 {
+					animation-name: fly-out-6;
+				}
+			}
+		}
+	}
+}
+
+// Кейфреймы анимаций
+// Флаги
+@keyframes fly-out-1 {
+	0% {
+		left: 50%;
+	}
+	100% {
+		left: 0%;
+	}
+}
+
+@keyframes fly-out-2 {
+	0% {
+		left: 50%;
+		top: 50%;
+	}
+	100% {
+		left: 0%;
+		top: 20%;
+	}
+}
+
+@keyframes fly-out-3 {
+	0% {
+		top: 50%;
+	}
+	100% {
+		top: 0%;
+	}
+}
+
+@keyframes fly-out-4 {
+	0% {
+		right: 50%;
+		top: 50%;
+	}
+	100% {
+		right: 0%;
+		top: 20%;
+	}
+}
+
+@keyframes fly-out-5 {
+	0% {
+		right: 50%;
+	}
+	100% {
+		right: 0%;
+	}
+}
+
+@keyframes fly-out-6 {
+	0% {
+		bottom: 50%;
+	}
+	100% {
+		bottom: 0%;
+	}
+}
+// Вращениие
+@keyframes rotate-infinite {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

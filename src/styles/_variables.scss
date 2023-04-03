@@ -1,0 +1,42 @@
+// Colors
+$white: #fff;
+// Nav
+$nav-bar: #4a4a4a;
+$nav-bar-underline: #fb9b69;
+// H1
+$heading-primary: #2d2d2d;
+$heading-secondary: #ff8345;
+$subheading: #7c7c7c;
+// Shadows
+$search-shadow: 0px 20px 30px rgba(222, 222, 222, 0.25);
+// Placeholder
+$placeholder: #a1a1a1;
+// Users under input
+$users-primary: #707070;
+$users-secondary: #fd905a;
+// Main
+$main-bg: #ecf7f3;
+$main-green: #48b774;
+$main-green-hover: #299856;
+
+// Spacings
+$xs: 375px;
+$sx: 425px;
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xl2: 1536px;
+
+$main-p-x: 16px;
+
+// Transitions
+$main-transition: 0.2s ease-in-out;
+
+// Mixins
+@mixin pseudo-elem($width, $height) {
+	content: '';
+	position: absolute;
+	width: $width;
+	height: $height;
+}

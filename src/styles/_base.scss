@@ -1,0 +1,44 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+html {
+	overflow-x: hidden;
+	background-color: $main-bg;
+}
+
+body {
+	width: 100%;
+	max-width: calc(1113px + ($main-p-x * 2));
+
+	margin: 0 auto;
+	padding: 0 $main-p-x;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 120%;
+	color: $heading-primary;
+
+	@media screen and (min-width: $sx) {
+		font-size: 32px;
+		line-height: 122%;
+	}
+	@media screen and (min-width: $sm) {
+		font-size: 36px;
+		line-height: 124%;
+	}
+	@media screen and (min-width: $md) {
+		font-size: 40px;
+		line-height: 126%;
+	}
+	@media screen and (min-width: $lg) {
+		font-size: 44px;
+		line-height: 128%;
+	}
+	@media screen and (min-width: $xl) {
+		font-size: 48px;
+		line-height: 130%;
+	}
+}
